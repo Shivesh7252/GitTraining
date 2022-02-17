@@ -1,0 +1,2 @@
+Hello this file3 belons to shivesh.
+its for the git command merge branch practice.
