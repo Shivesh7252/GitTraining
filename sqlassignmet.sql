@@ -258,3 +258,20 @@ where  trainer_name like "O%";
 -- 8
 select * from module_info
 where module_name is not null;
+
+ -- Assignment 4--
+  -- Exercise 1 --
+  -- q1
+  select trainer_id from trainer_info where trainer_name in (select trainer_name from trainer_info where trainer_name like "%i%");
+ -- q2
+ select trainer_id from trainer_info where trainer_name not in (select trainer_name from trainer_info where trainer_name like "%i%");
+ -- joins exercise 1--
+ select * from batch_info;
+ select * from associate_status;
+ 
+ select * from associate_status inner join batch_info
+ on associate_status.batch_id=batch_info.batch_id;
+ 
+ select trainer_info.trainer_id,associate_id from trainer_info 
+left outer join associate_status on 
+trainer_info.trainer_id=associate_status.trainer_id;
